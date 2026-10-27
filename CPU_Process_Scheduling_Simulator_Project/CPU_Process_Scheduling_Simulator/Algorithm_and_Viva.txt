@@ -1,0 +1,79 @@
+CPU PROCESS SCHEDULING SIMULATOR – QUEUE
+Algorithm and Viva Preparation
+Course: CSS2281 – C Programming and Data Structures Lab
+
+ALGORITHM
+1. Start.
+2. Initialize the process array and an empty queue.
+3. Show the main menu.
+4. If the user selects Add, read process arrival and burst times and validate them.
+5. If the user selects Display, show the entered processes.
+6. If the user selects Schedule:
+   a. Sort processes by arrival time, retaining input order for ties.
+   b. Enqueue the processes in sorted order.
+   c. Dequeue each process one by one.
+   d. If the CPU clock is less than arrival time, move the clock to arrival time.
+   e. start = clock.
+   f. completion = start + burst.
+   g. waiting = start - arrival.
+   h. turnaround = completion - arrival.
+   i. clock = completion.
+   j. Display results and calculate averages.
+7. If the user selects Exit, stop.
+8. Otherwise, show an invalid-choice message and return to the menu.
+
+KEY CONCEPTS
+- Queue: A linear data structure that follows FIFO (First In, First Out).
+- Enqueue: Insert an item at the rear of the queue.
+- Dequeue: Remove an item from the front of the queue.
+- FCFS: A non-preemptive scheduling algorithm that runs processes in arrival order.
+- Arrival time: Time at which a process enters the ready queue.
+- Burst time: CPU time required by a process.
+- Waiting time: Time spent waiting in the ready queue.
+- Turnaround time: Total time from arrival until completion.
+
+VIVA QUESTIONS AND ANSWERS
+1. What is a queue?
+   A queue is a linear data structure that follows First In, First Out (FIFO).
+
+2. What is CPU scheduling?
+   CPU scheduling selects a process from the ready queue to execute on the CPU.
+
+3. What is FCFS?
+   First Come, First Served executes processes in the order they arrive.
+
+4. Is FCFS preemptive?
+   No. In this basic implementation, once a process starts, it runs until it completes.
+
+5. What is enqueue?
+   Enqueue inserts an element at the rear of a queue.
+
+6. What is dequeue?
+   Dequeue removes an element from the front of a queue.
+
+7. What is waiting time?
+   Waiting time = start time − arrival time.
+
+8. What is turnaround time?
+   Turnaround time = completion time − arrival time.
+
+9. Why is a queue suitable for FCFS?
+   Because it serves processes in the same order they are inserted.
+
+10. What is one disadvantage of FCFS?
+    A long process can make shorter processes wait for a long time (the convoy effect).
+
+11. What happens if the CPU is idle before a process arrives?
+    The simulation clock advances to that process's arrival time.
+
+12. What is the difference between arrival time and burst time?
+    Arrival time is when a process becomes ready; burst time is the CPU time it needs.
+
+13. What is the purpose of a circular queue here?
+    It allows the array queue to reuse positions as elements are removed.
+
+14. What is the time complexity of bubble sorting the processes?
+    O(n^2) in the worst case.
+
+15. Give two possible future improvements.
+    Add Round Robin or SJF scheduling, and draw a Gantt chart.
